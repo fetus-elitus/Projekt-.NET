@@ -17,9 +17,6 @@ body {
   margin-bottom: 60px;
 }
 
-.navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3 {
-    display: none;
-}
 
 .navbar-nav
 {
