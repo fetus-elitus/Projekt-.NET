@@ -3,15 +3,17 @@
 @{
 ViewData["Title"] = "Fizz Buzz";
 }
-<div class="text-center">
+<div class="text-left">
     <h1 class="display-4">Welcome @Model.Name</h1>
     
-    <form method="post">
-        <span asp-validation-for="FizzBuzz.Number" class="text-danger"></span>
-        <label asp-for="FizzBuzz.Number"></label>
-        <input asp-for="FizzBuzz.Number" /><br />
-        <button type="submit">Zatwierdź</button>
-        <label>@Model.FizzBuzz.CheckRange(@Model.FizzBuzz.Number)</label>
+    <form class="row" method="post">
+        <label class="col-9" asp-for="FizzBuzz.Number"></label>
+        <input class="col-12" asp-for="FizzBuzz.Number" /><br />
+        <button class="col-1" type="submit">Zatwierdź</button>
+        @if(Model.FizzBuzz.CheckRange()!="")
+        {
+            <span asp-validation-for="FizzBuzz.Number" class="text-erorr col-12">@Model.FizzBuzz.CheckRange()</span>
+        }
     </form>
 
 </div>

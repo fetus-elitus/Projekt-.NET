@@ -8,20 +8,20 @@ namespace WebApplication1.Models
         [Display(Name = "Podaj mi swój numerek")]
         public int? Number { get; set; }
 
-        public string CheckRange(int? number)
+        public string CheckRange()
         {
-            if (number is null)
-                return "Liczba nie spełnia parametru";
+            if (this.Number is null)
+                return "";
             else
             {
-                if (number % 15 == 0)
+                if (this.Number % 15 == 0)
                     return "FizzBuzz";
-                else if (number % 5 == 0)
+                else if (this.Number % 5 == 0)
                     return "Buzz";
-                else if (number % 3 == 0)
+                else if (this.Number % 3 == 0)
                     return "Fizz";
                 else
-                    return "Zła liczba";
+                    return "Zla liczba";
             }
         }
     }

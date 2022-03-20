@@ -9,14 +9,11 @@ namespace WebApplication1.Pages
         private readonly ILogger<IndexModel> _logger;
         [BindProperty]
         public FizzBuzz FizzBuzz { get; set; }
-        [BindProperty(SupportsGet =true)]
+        [BindProperty(SupportsGet = true)]
         public string Name { get; set; }
 
-        private IndexModel()
-        {
-
-        }
-        public IndexModel(ILogger<IndexModel> logger):this()
+        
+        public IndexModel(ILogger<IndexModel> logger)
         {
             _logger = logger;
             FizzBuzz = new FizzBuzz();
@@ -24,10 +21,10 @@ namespace WebApplication1.Pages
 
         public void OnGet()
         {
-            /*if(Name is null)
+            if (Name is null)
             {
                 Name = "Byku";
-            }*/
+            }
         }
         public IActionResult OnPost()
         {
